@@ -1,0 +1,67 @@
+Instructions for Password Generator:
+Enter desired name of website in Text Box. 
+Ex: www.google.com → google
+Click the button under the text box that says “Generate Password”
+Password will be returned in box above Text Box
+Copy and Paste your password manually
+You have successfully generated your password
+
+Programming Languages Used in Code:
+HTML: Hyper Text Markup Language
+CSS: Cascading Style Sheets
+JS: JavaScript
+
+Examples of Passwords Generated:
+Website name: www.google.com 
+Password Generated: ogl:oglXYZ57ogl
+
+Website name: www.facebook.com 
+Password Generated: &XZZ@4eboebo5#
+
+Website name: www.khanacademy.org 
+Password Generated: 9xxZcaZyca#3#ca
+
+Website name: www.teams.microsoft.com 
+Password Generated: //_s&7X3zsY
+
+Website name: www.xbox.com
+Password Generated: ZYX$bobo4334bo
+
+
+Description of How Algorithm Works:
+
+ <div id="website_question"><br><i>Password will be shown here</i></div><br>
+
+The div above with the id="website_question" is where the users password will be exported to after the password is generated.
+
+     <input type="text" id="website_name_input" placeholder="Type Here"><br>
+  
+This input is where the user will enter their desired website name, which will then be processed through the algorithm coded in JavaScript to create a password. The steps for this process are shown above in the section “Instructions for Password Generator”. 
+  
+<button onClick="passwordGenerator()">Generate Password</button>
+ 
+This button will initiate the algorithm coded in JavaScript. The onClick="passwordGenerator()” will initiate the function, hence the identification of the tag passwordGenerator().
+
+function passwordGenerator() {
+var valueOfQuestion = document.getElementById("website_name_input").value;
+ 
+ This is the function that creates the password. The function is called passwordGenerator(). The var valueOfQuestion is the variable in which the user's input will be stored. The document
+.getElementById gets the value (string) which the user has entered in the input box from the input box with the identification of id="website_name_input".
+
+if (valueOfQuestion.length >= 15){
+
+Here the var valueOfQuestion is put to play, along with the entire algorithm responsible for generating the password. An If statement is used. The variable valueOfQuestion is assigned the property .length. This will identify the length of the user's input. If the length matches the corresponding number (which is the number of characters) assigned to the property, the algorithm will be initiated. If not, it moves onto the next algorithm, hence the use of the if and else if statements. 
+
+var valueAA = valueOfQuestion.substring(4, 7, 10)
+
+If the length of the users input is matched, the users input is then substringed, meaning only the characters in the positions assigned to the substring property will be used. This data is stored in the var value’ ’ (all algorithms used different names). That var is then used in the next part. 
+
+var returnA = ( 84 + 'Z' + 'x' + valueAA + '/' + 1 + valueAA + 'XYZ')
+
+Here, a variety of characters, integers, and the variable used in the previous step are concatenated, meaning they are joined together. All algorithms use different characters, integers, and symbols. Though, all algorithms will use the same input value, not all will use the same ordered characters in the users input. This data is then stored in the var return’ ‘ (all algorithms use different characters). The password is then finally created.
+
+document.getElementById("website_question").innerHTML = returnA;
+}
+
+The property getElementById then identifies the box in which the text "Password will be shown here" by id=” ”. The text in that <p> is changed with the property .innerHTML and replaced with the password created. That created password is stored in the var return’ ’(all algorithms use different characters), hence the use of this particular var in that line. The user will then be shown their password, and can make use of it. 
+
